@@ -115,6 +115,26 @@
       z-index: 1;
     }
 
+    .sheet-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 28px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      border-radius: 4px;
+      position: relative;
+      z-index: 1;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .sheet-link:hover {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
     .scroll-hint {
       position: absolute;
       bottom: 40px;
@@ -504,6 +524,7 @@
     </h1>
     <p class="subtitle">SEPTEMBER &mdash; OCTOBER 2025</p>
     <p class="dates">Tel Aviv &rarr; Paris &rarr; Tokyo &rarr; Hokkaido &rarr; Tokyo &rarr; Home</p>
+    <a href="https://docs.google.com/spreadsheets/d/1c6urSAtl_m91gZguyQVGO4FCa-ClaUPs8OIfyOL9lDg/edit?usp=sharing" target="_blank" class="sheet-link">Open Spreadsheet</a>
     <div class="scroll-hint">SCROLL</div>
   </section>
 
@@ -578,7 +599,7 @@
           Starting point before the long journey east.
         </div>
         <div class="day-map">
-          <iframe src="https://maps.google.com/maps?q=Paris,+France&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg/800px-Tour_Eiffel_Wikimedia_Commons.jpg" alt="Eiffel Tower, Paris" style="width:100%; height:250px; object-fit:cover; display:block;">
         </div>
       </div>
 
@@ -598,9 +619,6 @@
           </ul>
         </div>
         <div class="hotel-info"><strong>Sleep:</strong> On the plane</div>
-        <div class="day-map">
-          <iframe src="https://maps.google.com/maps?saddr=Ben+Gurion+Airport,+Tel+Aviv&daddr=Charles+de+Gaulle+Airport,+Paris+to:Haneda+Airport,+Tokyo&t=&z=3&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-        </div>
       </div>
 
       <!-- Day 1 -->
