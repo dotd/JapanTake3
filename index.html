@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Trip 2025 - 日本旅行</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #BC002D;
+      --dark-red: #8B0020;
+      --cream: #FDF5E6;
+      --ink: #2C2C2C;
+      --gold: #C9A84C;
+      --light-gold: #E8D5A3;
+      --paper: #F7F0E3;
+      --shadow: rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Decorative background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(188,0,45,0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(180deg, #1a0a0a 0%, #2C1810 40%, #3D2317 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(188,0,45,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 30% 70%, rgba(201,168,76,0.1) 0%, transparent 50%);
+    }
+
+    .hero-sun {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--red) 0%, var(--dark-red) 70%, transparent 100%);
+      box-shadow: 0 0 80px rgba(188,0,45,0.4), 0 0 160px rgba(188,0,45,0.2);
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 1;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 80px rgba(188,0,45,0.4), 0 0 160px rgba(188,0,45,0.2); }
+      50% { box-shadow: 0 0 100px rgba(188,0,45,0.5), 0 0 200px rgba(188,0,45,0.3); }
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 4rem;
+      color: var(--cream);
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.1em;
+    }
+
+    .hero .kanji {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 6rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 10px;
+      text-shadow: 0 0 40px rgba(201,168,76,0.3);
+    }
+
+    .hero .subtitle {
+      font-size: 1.2rem;
+      color: var(--light-gold);
+      margin-top: 20px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .dates {
+      font-size: 1rem;
+      color: rgba(253,245,230,0.6);
+      margin-top: 12px;
+      letter-spacing: 0.15em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(253,245,230,0.4);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      z-index: 1;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: rgba(253,245,230,0.3);
+      margin: 10px auto 0;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ---- MAIN CONTENT ---- */
+    .content {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Section headers */
+    .section-header {
+      text-align: center;
+      margin: 80px 0 50px;
+      position: relative;
+    }
+
+    .section-header::before,
+    .section-header::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 80px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-header::before { left: calc(50% - 200px); }
+    .section-header::after { right: calc(50% - 200px); }
+
+    .section-header h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2rem;
+      color: var(--dark-red);
+      display: inline-block;
+      background: var(--cream);
+      padding: 0 30px;
+      position: relative;
+    }
+
+    .section-header .jp {
+      display: block;
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    /* ---- TIMELINE ---- */
+    .timeline {
+      position: relative;
+      padding-left: 60px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--red), var(--gold), var(--red));
+    }
+
+    .day-card {
+      position: relative;
+      margin-bottom: 30px;
+      background: var(--paper);
+      border-radius: 8px;
+      padding: 28px 32px;
+      box-shadow: 0 2px 20px var(--shadow);
+      border-left: 3px solid var(--red);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .day-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+    }
+
+    .day-card::before {
+      content: '';
+      position: absolute;
+      left: -49px;
+      top: 32px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--red);
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 2px var(--red);
+    }
+
+    .day-card.empty {
+      background: transparent;
+      box-shadow: none;
+      border-left: 3px solid var(--light-gold);
+      padding: 16px 32px;
+      opacity: 0.6;
+    }
+
+    .day-card.empty::before {
+      background: var(--light-gold);
+      box-shadow: 0 0 0 2px var(--light-gold);
+      width: 10px;
+      height: 10px;
+      left: -47px;
+      top: 22px;
+    }
+
+    .day-card.flight {
+      border-left-color: var(--gold);
+      background: linear-gradient(135deg, var(--paper) 0%, #FFF8E7 100%);
+    }
+
+    .day-card.flight::before {
+      background: var(--gold);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .day-number {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.4rem;
+      color: var(--dark-red);
+      font-weight: 700;
+      min-width: 70px;
+    }
+
+    .day-date {
+      font-size: 0.85rem;
+      color: #888;
+      letter-spacing: 0.05em;
+    }
+
+    .day-dow {
+      font-size: 0.75rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .location-badge {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    .location-badge.hokkaido {
+      background: #2E7D32;
+    }
+
+    .location-badge.paris {
+      background: #1565C0;
+    }
+
+    .location-badge.transit {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    .day-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin: 10px 0 8px;
+    }
+
+    .day-details {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .day-details ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    .day-details ul li {
+      padding: 3px 0 3px 20px;
+      position: relative;
+    }
+
+    .day-details ul li::before {
+      content: '\25C6';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-size: 0.6rem;
+      top: 6px;
+    }
+
+    .hotel-info {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .hotel-info strong {
+      color: var(--gold);
+    }
+
+    .food-tag {
+      display: inline-block;
+      background: #FFF3E0;
+      color: #E65100;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin: 2px 4px 2px 0;
+    }
+
+    /* ---- OVERVIEW TABLE ---- */
+    .overview-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.85rem;
+    }
+
+    .overview-table thead th {
+      background: var(--dark-red);
+      color: var(--cream);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .overview-table tbody td {
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .overview-table tbody tr:nth-child(even) {
+      background: rgba(0,0,0,0.02);
+    }
+
+    .overview-table tbody tr:hover {
+      background: rgba(188,0,45,0.03);
+    }
+
+    /* ---- UNPLANNED DAYS ---- */
+    .unplanned-group {
+      position: relative;
+      margin-bottom: 30px;
+      background: var(--paper);
+      border-radius: 8px;
+      padding: 24px 32px;
+      box-shadow: 0 2px 12px var(--shadow);
+      border-left: 3px dashed var(--light-gold);
+      opacity: 0.7;
+    }
+
+    .unplanned-group::before {
+      content: '';
+      position: absolute;
+      left: -48px;
+      top: 28px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--light-gold);
+      border: 3px solid var(--cream);
+    }
+
+    .unplanned-label {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      color: #999;
+      font-style: italic;
+    }
+
+    .unplanned-note {
+      font-size: 0.8rem;
+      color: #bbb;
+      margin-top: 4px;
+    }
+
+    /* ---- DAY MAP ---- */
+    .day-map {
+      margin-top: 16px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .day-map iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      display: block;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      color: #aaa;
+      font-size: 0.8rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 30px;
+    }
+
+    footer .jp-footer {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      color: var(--dark-red);
+      margin-bottom: 10px;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero .kanji { font-size: 3.5rem; }
+      .hero-sun { width: 120px; height: 120px; }
+      .content { padding: 40px 16px 80px; }
+      .timeline { padding-left: 40px; }
+      .timeline::before { left: 10px; }
+      .day-card { padding: 20px; }
+      .day-card::before { left: -37px; }
+      .day-card.empty::before { left: -35px; }
+      .unplanned-group::before { left: -36px; }
+      .section-header::before, .section-header::after { width: 40px; }
+      .section-header::before { left: calc(50% - 140px); }
+      .section-header::after { right: calc(50% - 140px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-sun"></div>
+    <h1>
+      <span class="kanji">日本旅行</span>
+      Japan Trip
+    </h1>
+    <p class="subtitle">SEPTEMBER &mdash; OCTOBER 2025</p>
+    <p class="dates">Tel Aviv &rarr; Paris &rarr; Tokyo &rarr; Hokkaido &rarr; Tokyo &rarr; Home</p>
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div class="section-header">
+      <h2>Overview <span class="jp">概要</span></h2>
+    </div>
+
+    <table class="overview-table">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Dates</th>
+          <th>Location</th>
+          <th>Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pre-trip</td>
+          <td>Sep 9</td>
+          <td>Paris</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Travel</td>
+          <td>Sep 10 - 11</td>
+          <td>Tel Aviv &rarr; Paris &rarr; Tokyo</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>Hokkaido</td>
+          <td>Sep 12 - 17</td>
+          <td>Sapporo &amp; surroundings</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>To be planned</td>
+          <td>Sep 18 - 28</td>
+          <td>TBD</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>Tokyo</td>
+          <td>Sep 29 - Oct 1</td>
+          <td>Tokyo</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ITINERARY -->
+    <div class="section-header">
+      <h2>Itinerary <span class="jp">旅程</span></h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Day -1 -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-number">Day -1</span>
+          <span class="day-date">Sep 9</span>
+          <span class="day-dow">Wednesday</span>
+          <span class="location-badge paris">Paris</span>
+        </div>
+        <div class="day-title">Paris - Pre-departure</div>
+        <div class="day-details">
+          Starting point before the long journey east.
+        </div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Paris,+France&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 0 -->
+      <div class="day-card flight">
+        <div class="day-header">
+          <span class="day-number">Day 0</span>
+          <span class="day-date">Sep 10</span>
+          <span class="day-dow">Thursday</span>
+          <span class="location-badge transit">Transit</span>
+        </div>
+        <div class="day-title">Tel Aviv &rarr; Paris &rarr; Tokyo</div>
+        <div class="day-details">
+          <ul>
+            <li>Tel Aviv to Paris: 16:30 - 20:10</li>
+            <li>Paris to Tokyo: 22:00 - next day 18:30</li>
+          </ul>
+        </div>
+        <div class="hotel-info"><strong>Sleep:</strong> On the plane</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?saddr=Ben+Gurion+Airport,+Tel+Aviv&daddr=Charles+de+Gaulle+Airport,+Paris+to:Haneda+Airport,+Tokyo&t=&z=3&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 1 -->
+      <div class="day-card flight">
+        <div class="day-header">
+          <span class="day-number">Day 1</span>
+          <span class="day-date">Sep 11</span>
+          <span class="day-dow">Friday</span>
+          <span class="location-badge">Honshu</span>
+        </div>
+        <div class="day-title">Arrival in Tokyo - 東京到着</div>
+        <div class="day-details">
+          <ul>
+            <li>Arriving at Tokyo at 18:30</li>
+            <li>Hotel near Haneda Airport</li>
+            <li>Evening exploration of Tokyo</li>
+          </ul>
+        </div>
+        <div class="hotel-info"><strong>Hotel:</strong> Haneda Airport area, Tokyo</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Haneda+Airport,+Tokyo&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-number">Day 2</span>
+          <span class="day-date">Sep 12</span>
+          <span class="day-dow">Saturday</span>
+          <span class="location-badge hokkaido">Hokkaido</span>
+        </div>
+        <div class="day-title">Sapporo Day 1 - 札幌</div>
+        <div class="day-details">
+          Flight 09:30 &rarr; New Chitose Airport 11:10. Rent a car.
+          <ul>
+            <li>Sapporo TV Tower - テレビ塔</li>
+            <li>Clock Tower - 時計台</li>
+            <li>Odori Park - 大通公園</li>
+            <li>Nakajima Park &amp; Maruyama Park</li>
+            <li>Susukino District (Nikka Whiskey Sign)</li>
+            <li>Observation Deck, Mount Moiwa - 藻岩山</li>
+            <li>Nijo Market - 二条市場</li>
+          </ul>
+          <div style="margin-top:10px;">
+            <span class="food-tag">Sapporo Miso Ramen</span>
+            <span class="food-tag">Genghis Khan BBQ</span>
+            <span class="food-tag">Soup Curry</span>
+          </div>
+          <div style="margin-top:6px; font-size:0.8rem; color:#999;">Sapporo Autumn Fest may be running</div>
+        </div>
+        <div class="hotel-info"><strong>Hotel:</strong> Sapporo</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?saddr=Sapporo+TV+Tower&daddr=Sapporo+Clock+Tower+to:Odori+Park,+Sapporo+to:Nakajima+Park,+Sapporo+to:Maruyama+Park,+Sapporo+to:Susukino,+Sapporo+to:Mount+Moiwa,+Sapporo+to:Nijo+Market,+Sapporo&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-number">Day 3</span>
+          <span class="day-date">Sep 13</span>
+          <span class="day-dow">Sunday</span>
+          <span class="location-badge hokkaido">Hokkaido</span>
+        </div>
+        <div class="day-title">North West of Sapporo - Shakotan &amp; Otaru</div>
+        <div class="day-details">
+          Scenic coastal drive through Shakotan Peninsula and charming Otaru.
+          <ul>
+            <li>Cape Kamui - 神威岬</li>
+            <li>Nozuka Campground, Shakotan</li>
+            <li>Shimamui Coast - 島武意海岸</li>
+            <li>Candle Rock, Shakotan</li>
+            <li>Ebisu Rock &amp; Daikoku Rock, Yoichi</li>
+            <li>Kakizaki Shoten, Yoichi</li>
+            <li>Vineyards of Yoichi - 余市ワイナリー</li>
+            <li>Ranshima Beach, Otaru</li>
+            <li>Otaru Canal - 小樽運河</li>
+            <li>Denuki Kouji, Otaru</li>
+            <li>Kamaei, Otaru</li>
+            <li>Sakaimachi Street - 堺町通り</li>
+            <li>Music Box Museum - オルゴール堂</li>
+            <li>LeTAO, Otaru</li>
+          </ul>
+        </div>
+        <div class="hotel-info"><strong>Hotel:</strong> Sapporo</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?saddr=Cape+Kamui,+Shakotan,+Hokkaido&daddr=Shimamui+Coast,+Shakotan+to:Yoichi,+Hokkaido+to:Otaru+Canal,+Otaru+to:Sakaimachi+Street,+Otaru+to:Otaru+Music+Box+Museum,+Otaru&t=&z=10&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-number">Day 4</span>
+          <span class="day-date">Sep 14</span>
+          <span class="day-dow">Monday</span>
+          <span class="location-badge hokkaido">Hokkaido</span>
+        </div>
+        <div class="day-title">South of Sapporo - Noboribetsu - 登別</div>
+        <div class="day-details">
+          Day trip south of Sapporo to the volcanic hot spring town of Noboribetsu.
+        </div>
+        <div class="hotel-info"><strong>Hotel:</strong> Sapporo</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?saddr=Sapporo+Station,+Sapporo&daddr=Noboribetsu,+Hokkaido&t=&z=9&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Days 5-7 -->
+      <div class="unplanned-group">
+        <div class="day-header">
+          <span class="day-number">Days 5-7</span>
+          <span class="day-date">Sep 15 - 17</span>
+          <span class="day-dow">Tue - Thu</span>
+          <span class="location-badge hokkaido">Hokkaido</span>
+        </div>
+        <div class="unplanned-label">Hokkaido - To be planned</div>
+        <div class="unplanned-note">More Hokkaido adventures await. Possible areas: Furano, Biei, Asahikawa, Hakodate...</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Hokkaido,+Japan&t=&z=7&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Days 8-18 -->
+      <div class="unplanned-group">
+        <div class="day-header">
+          <span class="day-number">Days 8-18</span>
+          <span class="day-date">Sep 18 - 28</span>
+          <span class="day-dow">Fri - Sun</span>
+        </div>
+        <div class="unplanned-label">Open days - To be planned (11 days)</div>
+        <div class="unplanned-note">The heart of the trip. Kyoto, Osaka, Nara, Hiroshima, Alps...? The possibilities are endless.</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Japan&t=&z=6&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 19 -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-number">Day 19</span>
+          <span class="day-date">Sep 29</span>
+          <span class="day-dow">Tuesday</span>
+          <span class="location-badge">Tokyo</span>
+        </div>
+        <div class="day-title">Return to Tokyo - 東京</div>
+        <div class="day-details">
+          Back in Tokyo for the final stretch.
+        </div>
+        <div class="hotel-info"><strong>Hotel:</strong> Tokyo</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Tokyo,+Japan&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 20 -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-number">Day 20</span>
+          <span class="day-date">Sep 30</span>
+          <span class="day-dow">Wednesday</span>
+          <span class="location-badge">Tokyo</span>
+        </div>
+        <div class="day-title">Tokyo Exploration - 東京散策</div>
+        <div class="day-details">
+          Full day in Tokyo.
+        </div>
+        <div class="hotel-info"><strong>Hotel:</strong> Tokyo</div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Tokyo,+Japan&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Day 21 -->
+      <div class="day-card flight">
+        <div class="day-header">
+          <span class="day-number">Day 21</span>
+          <span class="day-date">Oct 1</span>
+          <span class="day-dow">Thursday</span>
+          <span class="location-badge transit">Departure</span>
+        </div>
+        <div class="day-title">Sayonara Japan - さようなら日本</div>
+        <div class="day-details">
+          <ul>
+            <li>Last day in Tokyo</li>
+            <li>Flight home at 21:30</li>
+          </ul>
+        </div>
+        <div class="day-map">
+          <iframe src="https://maps.google.com/maps?q=Narita+International+Airport,+Japan&t=&z=11&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+  </div><!-- /content -->
+
+  <footer>
+    <div class="jp-footer">良い旅を</div>
+    <p>Have a wonderful journey</p>
+  </footer>
+
+</body>
+</html>
